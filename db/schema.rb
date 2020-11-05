@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_10_29_155257) do
   create_table "ingredients", force: :cascade do |t|
     t.string "name"
     t.string "type"
+    t.string "unit"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -59,18 +60,18 @@ ActiveRecord::Schema.define(version: 2020_10_29_155257) do
 
   create_table "quantities", force: :cascade do |t|
     t.integer "number"
-    t.string "unit"
     t.bigint "recipe_id", null: false
     t.bigint "ingredient_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "unit"
     t.index ["ingredient_id"], name: "index_quantities_on_ingredient_id"
     t.index ["recipe_id"], name: "index_quantities_on_recipe_id"
   end
 
   create_table "recipes", force: :cascade do |t|
     t.string "name"
-    t.time "prep_time"
+    t.string "prep_time"
     t.time "cook_time"
     t.string "price"
     t.string "description"
