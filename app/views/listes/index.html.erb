@@ -1,3 +1,12 @@
 <p>coucou</p>
-
+<% @listes.each do |liste| %>
+<%= link_to   liste , style: 'text-decoration:none' do %>
+<div class="card mb-2" style="width: 18rem; ">
+    <div class=" card-body">
+  <h5 class="card-title">Liste du <%= liste.created_at %></h5>
+  <p class="card-text"> avec <%= liste.quantity %> recettes</p>
+</div>
+</div>
+<% end %>
+<% end %>
 <%= link_to  "Nouvelle liste", new_liste_path %>

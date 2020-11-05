@@ -1,2 +1,13 @@
 <%= @liste.quantity %>
-<%= @liste.user %>
+<% @liste.recipes.each do |recipe| %>
+<div class="card">
+  <h5 class="card-header"><%= recipe.name %></h5>
+  <div class="card-body">
+    <h5 class="card-title"><%= recipe.complexity %> </h5>
+    <h5 class="card-title"><%= recipe.price %> </h5>
+    <p class="card-text"> <%= recipe.description %></p>
+  </div>
+</div>
+<h5></h5>
+
+<% end %>

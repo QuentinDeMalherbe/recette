@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  root to: 'listes#index'
   resources :preferences
   resources :listes do
     resources :recettes, shallow: true do

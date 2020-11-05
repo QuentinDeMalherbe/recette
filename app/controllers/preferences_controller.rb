@@ -12,7 +12,7 @@ class PreferencesController < ApplicationController
     @preference.user = current_user
     if @preference.save
       flash[:success] = "Object successfully created"
-      redirect_to @preference
+      redirect_to listes_path
     else
       flash[:error] = "Something went wrong"
       render 'new'
