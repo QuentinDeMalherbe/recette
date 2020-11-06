@@ -70,7 +70,7 @@ def ingredient_in_string string
   array_of_string = string_with_de string.split(' ')
   if array_of_string.first.to_f == 0
     return string
-  elsif ['g', 'c.', 'verre', 'cl', 'kit', 'pincée', 'petite', 'botte','gousse','gousses'].include?(array_of_string[1]) && array_of_string.first.to_f != 0
+  elsif ['g', 'c.', 'verre', 'verres', 'cl', 'kit', 'pincée', 'petite','poignée', 'poignées',  'botte','gousse','gousses'].include?(array_of_string[1]) && array_of_string.first.to_f != 0
     if array_of_string[1] == 'c.'
       array_of_string.shift(5)
       return array_of_string.join(" ")
@@ -91,7 +91,7 @@ def string_with_de array
   new_array = []
   array.each_with_index do |word, index|
 
-    if  (word[0] == "d" && word[1] == "'") && ['g', 'c.', 'verre', 'cl', 'kit', 'pincée', 'petite', 'gousse', 'gousses' ].include?(array[index-1])
+    if  (word[0] == "d" && word[1] == "'") && ['g', 'c.', 'verre', 'verres', 'cl', 'kit', 'pincée', 'petite','poignée', 'poignées',  'botte','gousse','gousses' ].include?(array[index-1])
       new_array << 'de'
       new_array << word.gsub("d'","")
     else
@@ -133,7 +133,7 @@ def number_and_unit_quantity(string, quantity)
 end
 
 def unit_ingredient string
-  if ['g', 'c.', 'verre', 'cl', 'kit', 'pincée', 'petite','gousse','gousses' ].include?(string.split(' ').second)
+  if ['g', 'c.', 'verre', 'verres', 'cl', 'kit', 'pincée', 'petite','poignée', 'poignées',  'botte','gousse','gousses'].include?(string.split(' ').second)
       if string.split(' ').second == 'c.'
         return 'c. à s.'
       elsif string.split(' ').second == 'petite'

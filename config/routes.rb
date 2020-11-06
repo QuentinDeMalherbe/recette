@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'listes#index'
   resources :preferences
   resources :listes do
-    resources :recettes, shallow: true do
+    resources :recipes, shallow: true do
     resources :ingredients, only: [:show]
   end
   end

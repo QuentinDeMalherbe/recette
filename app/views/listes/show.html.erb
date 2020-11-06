@@ -1,5 +1,6 @@
 <%= @liste.quantity %>
 <% @liste.recipes.each do |recipe| %>
+<%= link_to   recipe_path(recipe) do %>
 <div class="card">
   <h5 class="card-header"><%= recipe.name %></h5>
   <div class="card-body">
@@ -8,6 +9,6 @@
     <p class="card-text"> <%= recipe.description %></p>
   </div>
 </div>
-<h5></h5>
-
 <% end %>
+<% end %>
+<button class='btn btn-primary'>crétion liste d'ingrédient</button>
