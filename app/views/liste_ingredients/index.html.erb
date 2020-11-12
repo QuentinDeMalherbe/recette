@@ -1,0 +1,10 @@
+<%  @liste_ingredients.each do |ing|%>
+<p class=''>
+  <%= simple_form_for ing, method: :patch, remote: true do |f| %>
+  <%= f.input :bought %>
+  <%= f.button :submit %>
+  <% end %>
+  <%= @ingredients.detect { |i| i[:name] == ing.ingredient.name }[:number] %>
+  <%= @ingredients.detect { |i| i[:name] == ing.ingredient.name }[:unit] %>
+  <%= ing.ingredient.name %></p>
+<% end %>

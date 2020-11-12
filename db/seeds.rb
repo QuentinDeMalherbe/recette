@@ -122,7 +122,7 @@ def unique_ingredient(string1, string2 = string1)
 end
 
 def number_and_unit_quantity(string, quantity)
-  if string.split(' ').first.to_f != 0
+  if string.split(' ').first.gsub(',','.').to_f != 0
     number = string.split(' ').first.gsub(',','.').to_f
     unit = unit_ingredient string
   end

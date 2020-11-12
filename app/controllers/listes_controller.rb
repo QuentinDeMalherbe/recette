@@ -29,16 +29,9 @@ class ListesController < ApplicationController
     end
   end
 
-  def show_ingredients
-    @liste = Liste.find(params[:id])
-    @quantities = Quantity.where(recipe: @liste.recipes)
-  end
-
   private
 
   def liste_params
     params.require(:liste).permit(:quantity)
   end
-
-
 end
