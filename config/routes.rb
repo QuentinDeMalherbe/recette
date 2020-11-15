@@ -9,6 +9,5 @@ Rails.application.routes.draw do
     resources :ingredients, only: [:show]
     end
   end
-  # get 'liste/:id/ingredients', to: 'listes#show_ingredients', as: 'liste_ingredients'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

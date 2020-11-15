@@ -1,0 +1,12 @@
+.card-liste {
+  width: 18rem;
+  margin: 0 auto;
+  border-radius: 15px;
+  color: $light-gray;
+  background-color: rgba($color: $khaki-yellow, $alpha: 0.4);
+  border: none;
+}
+
+.card-liste:hover {
+  background-color: rgba($color: $turquoise-blue, $alpha: 0.7);
+}

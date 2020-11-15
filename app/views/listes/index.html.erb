@@ -1,12 +1,16 @@
-<p>coucou</p>
-<% @listes.each do |liste| %>
-<%= link_to   liste , style: 'text-decoration:none' do %>
-<div class="card mb-2" style="width: 18rem; ">
-    <div class=" card-body">
-  <h5 class="card-title">Liste du <%= liste.created_at %></h5>
-  <p class="card-text"> avec <%= liste.quantity %> recettes</p>
+<h1 class='title'>Mes listes de courses</h1>
+<%= link_to  "+", new_liste_path , class:'btn btn-plus text-center'%>
+<div class="row mt-2 ">
+  <% @listes.each do |liste| %>
+  <div class="col-sm-6 col-md-4 ">
+    <%= link_to   liste , style: 'text-decoration:none' do %>
+    <div class="card card-liste mb-2">
+      <div class=" card-body">
+        <h5 class="card-title">Liste du <%= liste.created_at %></h5>
+        <p class="card-text"> avec <%= liste.quantity %> recettes</p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <% end %>
 </div>
-</div>
-<% end %>
-<% end %>
-<%= link_to  "Nouvelle liste", new_liste_path %>
